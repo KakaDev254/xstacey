@@ -368,6 +368,36 @@ body {
 .service-card:hover {
   transform: translateY(-8px);
 }
+/* ================= GALLERY UNIFORM IMAGES ================= */
+.gallery-img {
+  height: 260px; /* desktop uniform height */
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.gallery-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* crops instead of stretching */
+  transition: transform 0.4s ease;
+}
+
+/* Hover zoom (optional but nice) */
+.gallery-img:hover img {
+  transform: scale(1.06);
+}
+
+/* Mobile: let images auto-size */
+@media (max-width: 768px) {
+  .gallery-img {
+    height: auto;
+  }
+
+  .gallery-img img {
+    height: auto;
+  }
+}
+
 /* REVIEWS SECTION */
 .reviews-section {
   background: #f8f9fa;
@@ -478,7 +508,7 @@ body {
 .gallery-hero {
   padding: 140px 0 80px;
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("assets/nail11.jpg") center/cover no-repeat;
+    url("assets/nail7.jpg") center/cover no-repeat;
   color: #fff;
 }
 

@@ -53,7 +53,7 @@
         <div class="collapse navbar-collapse" id="navMenu">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link active" href="#home">Home</a>
+              <a class="nav-link" href="#home">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#services">Services</a>
@@ -81,13 +81,13 @@
           <!-- Slide 1 -->
           <div
             class="carousel-item active hero-slide"
-            style="background-image: url('assets/nail1.jpg')"
+            style="background-image: url('assets/nail3.jpg')"
           ></div>
 
           <!-- Slide 2 -->
           <div
             class="carousel-item hero-slide"
-            style="background-image: url('assets/nail2.jpg')"
+            style="background-image: url('assets/nail8.jpg')"
           ></div>
 
           <!-- Slide 3 -->
@@ -159,7 +159,7 @@
           <div class="col-lg-6">
             <div class="why-image-wrapper">
               <img
-                src="assets/nail2.jpg"
+                src="assets/nail11.jpg"
                 alt="Nails X Stacey Work"
                 class="img-fluid"
               />
@@ -208,32 +208,51 @@
     <!-- ================= GALLERY ================= -->
     <section id="gallery" class="py-5 bg-light">
       <div class="container">
+        <!-- Section Title -->
         <div class="text-center mb-5">
           <h2 class="section-title">Our Work</h2>
         </div>
 
+        <!-- Gallery Grid -->
         <div class="row g-3">
           <div class="col-md-4">
-            <img src="assets/hero-bg.jpg" class="img-fluid rounded" alt="" />
+            <div class="gallery-img">
+              <img src="assets/nail1.jpg" alt="Nail design 1" />
+            </div>
           </div>
+
           <div class="col-md-4">
-            <img src="assets/nail2.jpg" class="img-fluid rounded" alt="" />
+            <div class="gallery-img">
+              <img src="assets/nail2.jpg" alt="Nail design 2" />
+            </div>
           </div>
+
           <div class="col-md-4">
-            <img src="assets/nail3.jpg" class="img-fluid rounded" alt="" />
+            <div class="gallery-img">
+              <img src="assets/nail3.jpg" alt="Nail design 3" />
+            </div>
           </div>
+
           <div class="col-md-4">
-            <img src="assets/nail1.jpg" class="img-fluid rounded" alt="" />
+            <div class="gallery-img">
+              <img src="assets/nail4.jpg" alt="Nail design 4" />
+            </div>
           </div>
+
           <div class="col-md-4">
-            <img src="assets/nail15.jpg" class="img-fluid rounded" alt="" />
+            <div class="gallery-img">
+              <img src="assets/nail5.jpg" alt="Nail design 5" />
+            </div>
           </div>
+
           <div class="col-md-4">
-            <img src="assets/nail6.jpg" class="img-fluid rounded" alt="" />
+            <div class="gallery-img">
+              <img src="assets/nail6.jpg" alt="Nail design 6" />
+            </div>
           </div>
         </div>
 
-        <!-- SEE MORE BUTTON -->
+        <!-- See More Button -->
         <div class="text-center mt-5">
           <a href="gallery.html" class="btn btn-outline-dark px-4 py-2">
             See More Work
@@ -352,6 +371,28 @@
 
           if (bsCollapse) {
             bsCollapse.hide();
+          }
+        });
+      });
+    </script>
+    <script>
+      const sections = document.querySelectorAll("section[id]");
+      const navLinks = document.querySelectorAll(".navbar .nav-link");
+
+      window.addEventListener("scroll", () => {
+        let current = "";
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop - 120;
+          if (scrollY >= sectionTop) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === "#" + current) {
+            link.classList.add("active");
           }
         });
       });
